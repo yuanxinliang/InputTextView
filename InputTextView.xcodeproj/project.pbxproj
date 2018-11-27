@@ -13,6 +13,8 @@
 		594F2A9D21AD158200E270A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 594F2A9C21AD158200E270A1 /* Assets.xcassets */; };
 		594F2AA021AD158200E270A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 594F2A9E21AD158200E270A1 /* LaunchScreen.storyboard */; };
 		594F2AA321AD158200E270A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F2AA221AD158200E270A1 /* main.m */; };
+		594F2AAB21AD15C400E270A1 /* XLChatOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F2AAA21AD15C400E270A1 /* XLChatOperationView.m */; };
+		594F2AAE21AD15E700E270A1 /* XLInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F2AAD21AD15E700E270A1 /* XLInputTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		594F2A9F21AD158200E270A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		594F2AA121AD158200E270A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		594F2AA221AD158200E270A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		594F2AA921AD15C400E270A1 /* XLChatOperationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLChatOperationView.h; sourceTree = "<group>"; };
+		594F2AAA21AD15C400E270A1 /* XLChatOperationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLChatOperationView.m; sourceTree = "<group>"; };
+		594F2AAC21AD15E600E270A1 /* XLInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLInputTextView.h; sourceTree = "<group>"; };
+		594F2AAD21AD15E700E270A1 /* XLInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLInputTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				594F2A9421AD158000E270A1 /* AppDelegate.m */,
 				594F2A9621AD158000E270A1 /* ViewController.h */,
 				594F2A9721AD158000E270A1 /* ViewController.m */,
+				594F2AA921AD15C400E270A1 /* XLChatOperationView.h */,
+				594F2AAA21AD15C400E270A1 /* XLChatOperationView.m */,
+				594F2AAC21AD15E600E270A1 /* XLInputTextView.h */,
+				594F2AAD21AD15E700E270A1 /* XLInputTextView.m */,
 				594F2A9921AD158000E270A1 /* Main.storyboard */,
 				594F2A9C21AD158200E270A1 /* Assets.xcassets */,
 				594F2A9E21AD158200E270A1 /* LaunchScreen.storyboard */,
@@ -141,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				594F2AAE21AD15E700E270A1 /* XLInputTextView.m in Sources */,
+				594F2AAB21AD15C400E270A1 /* XLChatOperationView.m in Sources */,
 				594F2A9821AD158000E270A1 /* ViewController.m in Sources */,
 				594F2AA321AD158200E270A1 /* main.m in Sources */,
 				594F2A9521AD158000E270A1 /* AppDelegate.m in Sources */,
@@ -285,7 +297,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VY74KE25H2;
 				INFOPLIST_FILE = InputTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,6 +306,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newace.InputTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AllDevelopment;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -301,7 +315,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InputTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newace.InputTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
