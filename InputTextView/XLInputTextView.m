@@ -14,18 +14,28 @@
 
 @implementation XLInputTextView
 
+static CGFloat maxHeight = 100.0f;
+static CGFloat minHeight = 36.5f;
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.scrollEnabled = NO;
         self.delegate = self;
-        self.returnKeyType = UIReturnKeyDone;
+        self.returnKeyType = UIReturnKeySend;
+        self.enablesReturnKeyAutomatically = YES;
     }
     return self;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
+        textView.text = @"";
+//        [textView resignFirstResponder];
+        CGRect frame = textView.frame;
+        textView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, minHeight);
+        if (self.frameChangeDelegate && [self.frameChangeDelegate respondsToSelector:@selector(inputTextViewFrameChange:)]) {
+            [self.frameChangeDelegate inputTextViewFrameChange:minHeight - frame.size.height];
+        }
         return NO;
     }
     return YES;
@@ -33,8 +43,6 @@
 
 
 -(void)textViewDidChange:(UITextView *)textView{
-    static CGFloat maxHeight = 100.0f;
-    static CGFloat minHeight = 36.5f;
     
     CGRect frame = textView.frame;
     CGSize constraintSize = CGSizeMake(frame.size.width, MAXFLOAT);
