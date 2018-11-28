@@ -18,9 +18,19 @@
     if (self = [super initWithFrame:frame]) {
         self.scrollEnabled = NO;
         self.delegate = self;
+        self.returnKeyType = UIReturnKeyDone;
     }
     return self;
 }
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 
 -(void)textViewDidChange:(UITextView *)textView{
     static CGFloat maxHeight = 100.0f;
